@@ -2,6 +2,7 @@ package bo.edu.usfx.descuentos;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class CalculadoraDescuentos {
 
     public double calcularPrecioFinal(double precioOriginal, double porcentajeDescuento) {
-        if (precioOriginal < 0) {
+        if (precioOriginal <= 0) {
             throw new IllegalArgumentException("El precio original debe ser mayor que cero");
         }
         if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
